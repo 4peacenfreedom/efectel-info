@@ -11607,7 +11607,7 @@ p + .list-img {
   width: 32px;
 }
 .subpage-header__line:after {
-  left: 40px;
+  left: 65px;
   width: 61px;
   opacity: 0.18;
 }
@@ -11642,10 +11642,10 @@ p + .list-img {
   .subpage-header__block {
     bottom: -40px;
     height: 269px;
-    padding: 52px 0 0 75px;
+    padding: 40px 0 0 40px;
   }
   .subpage-header__block:before {
-    width: 271px;
+    width: 380px;
     height: 269px;
   }
   .subpage-header__title {
@@ -15883,7 +15883,7 @@ body.is-loaded .loading-content {
     position: absolute;
     top: 0;
     left: 0;
-    width: 60%;
+    width: 70%;
     height: 100%;
     z-index: 2;
   }

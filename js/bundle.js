@@ -17294,3 +17294,42 @@ AOS.init({
     adaptiveHeight: true,
   });
 })(jQuery);
+
+/*
+funcion para mostrar reporte al usuario sobre el envio del correo
+*/
+
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .getElementById("contactform")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); // Esto previene el envío del formulario por defecto
+
+      var formData = new FormData(this); // Crea un objeto FormData con los datos del formulario
+
+      // Envía el formulario usando AJAX
+      fetch("external/form/contact-form.php", {
+        method: "POST",
+        body: formData,
+      })
+        .then(function (response) {
+          return response.text();
+        })
+        .then(function (data) {
+          // Mostrar mensaje de éxito
+          document.getElementById("responseMessage").innerHTML =
+            "<p>¡Gracias por contactarnos! Nos pondremos en contacto contigo en breve.</p>";
+          document.getElementById("responseMessage").style.color = "green";
+        })
+        .catch(function (error) {
+          // Mostrar mensaje de error
+          document.getElementById("responseMessage").innerHTML =
+            "<p>Hubo un error al enviar el formulario. Intenta nuevamente.</p>";
+          document.getElementById("responseMessage").style.color = "red";
+        });
+    });
+});
+
+/*
+termina funcion para mostrar reporte al usuario sobre el envio del correo
+*/
